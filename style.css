@@ -65,47 +65,72 @@ nav a:hover {
   color: #fff;
 }
 
-/* Hero */
+/* HERO (Updated) */
 .hero {
-  height: 100vh; /* Full screen */
-  background: url('hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
-  padding-left: 8%;
-  color: #fff;
+  justify-content: space-between;
+  padding: 50px 8%;
+  height: 80vh;
+  background: #f9f9f9;
 }
 
 .hero-content {
+  flex: 1;
   max-width: 600px;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 .hero-btns {
   margin-bottom: 20px;
 }
 
-.highlights {
+.hero-form {
   display: flex;
-  gap: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+.hero-services {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
   font-weight: bold;
   flex-wrap: wrap;
 }
 
-.highlights div {
-  background: rgba(0,0,0,0.5);
+.hero-services div {
+  background: #0056A6;
+  color: white;
   padding: 8px 15px;
   border-radius: 5px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 90%;
+  border-radius: 10px;
 }
 
 /* Services */
@@ -223,25 +248,3 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
-/* Animations */
-.animate-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
-}
-
-.animate-slide {
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: slideIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  to { opacity: 1; transform: translateX(0); }
-}
-
