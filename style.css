@@ -248,3 +248,35 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-form {
+    justify-content: center;
+  }
+
+  .hero-services {
+    justify-content: center;
+  }
+}
