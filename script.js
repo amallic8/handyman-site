@@ -1,4 +1,12 @@
-document.getElementById('contactBtn').addEventListener('click', function() {
-  alert('Thank you for reaching out! Call us at +91-XXXXXXXXXX or WhatsApp us.');
+// Add scroll animations
+document.addEventListener("scroll", () => {
+  const elements = document.querySelectorAll(".animate-fade, .animate-slide");
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.style.animationPlayState = "running";
+    }
+  });
 });
+
 
