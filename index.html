@@ -3,34 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Handyman Pune</title>
+  <title>Handyman Pune | Reliable Services</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <h1>Welcome to Handyman Pune</h1>
-    <p>Your trusted partner for all handyman services in Pune.</p>
+    <div class="container">
+      <div class="logo">Handyman Pune</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="tel:+91XXXXXXXXXX" class="btn primary">Call / WhatsApp</a>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Plumbing</li>
-        <li>Electrical Repairs</li>
-        <li>Carpentry</li>
-        <li>Painting</li>
-      </ul>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay animate-fade">
+      <h1>Reliable Handyman Services in Pune</h1>
+      <p>Plumbing, Electrical, Carpentry & More – We’ve Got You Covered</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn primary">Book a Service</a>
+        <a href="#contact" class="btn secondary">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <button id="contactBtn">Get in Touch</button>
-    </section>
-  </main>
+  <!-- SERVICES -->
+  <section id="services" class="services container">
+    <h2 class="animate-slide">Our Services</h2>
+    <div class="grid">
+      <div class="card">🔧 Plumbing</div>
+      <div class="card">💡 Electrical</div>
+      <div class="card">🔨 Carpentry</div>
+      <div class="card">🎨 Painting</div>
+      <div class="card">⚙️ Appliance Repair</div>
+      <div class="card">🚪 Shutter Repair</div>
+    </div>
+  </section>
 
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="why">
+    <h2 class="animate-fade">Why Choose Us</h2>
+    <div class="stats container">
+      <div class="stat">500+ Jobs Completed</div>
+      <div class="stat">24/7 Availability</div>
+      <div class="stat">100% Satisfaction Guarantee</div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process">
+    <h2 class="animate-slide">How It Works</h2>
+    <div class="steps container">
+      <div class="step">📅 Schedule a Service</div>
+      <div class="step">👨‍🔧 Our Expert Arrives</div>
+      <div class="step">✅ Job Completed & Paid</div>
+    </div>
+    <a href="#contact" class="btn primary">Book Now</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about container">
+    <h2 class="animate-fade">About Us</h2>
+    <p>We’re a team of professional handymen serving Pune with reliable, affordable, and quick services. Customer satisfaction is our top priority.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact container">
+    <h2 class="animate-slide">Book a Service</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Service Needed" required>
+      <textarea placeholder="Message" rows="4"></textarea>
+      <button type="submit" class="btn primary">Submit Request</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Handyman Pune. All rights reserved.</p>
+    <div class="container">
+      <p>© 2025 Handyman Pune. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
