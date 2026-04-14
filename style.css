@@ -1,8 +1,9 @@
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: #333;
-  background: #fff;
+  background: #f5f7fa;
 }
 
 h1, h2 {
@@ -11,14 +12,15 @@ h1, h2 {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 }
 
+/* HEADER */
 header {
   background: #fff;
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -30,23 +32,13 @@ header .container {
   justify-content: space-between;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #FF6A00;
-}
-
+/* BUTTONS */
 .btn {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: transform 0.2s, background 0.3s;
+  transition: all 0.2s;
 }
 
 .btn.primary {
@@ -54,25 +46,33 @@ nav a:hover {
   color: #fff;
 }
 
-.btn.secondary {
-  border: 2px solid #FF6A00;
-  color: #FF6A00;
-}
-
-.btn:hover {
-  transform: scale(1.05);
+.btn.primary:hover {
   background: #e65b00;
-  color: #fff;
 }
 
-/* HERO (Updated) */
+button {
+  padding: 12px 20px;
+  background: #FF6A00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #e65b00;
+}
+
+/* HERO (FIXED EMPTY SPACE) */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 8%;
-  height: 80vh;
-  background: #f9f9f9;
+  padding: 40px 8%;
+  min-height: 70vh;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
 }
 
 .hero-content {
@@ -81,48 +81,31 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 
-.hero-btns {
-  margin-bottom: 20px;
-}
-
+/* CALCULATOR FORM */
 .hero-form {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 
-.hero-form input {
-  padding: 10px;
-  border-radius: 5px;
+.hero-form input,
+.hero-form select {
+  padding: 12px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  min-width: 180px;
+  min-width: 200px;
 }
 
-.hero-services {
-  display: flex;
-  gap: 20px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  flex-wrap: wrap;
-}
-
-.hero-services div {
-  background: #0056A6;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
-
+/* IMAGE */
 .hero-image {
   flex: 1;
   text-align: right;
@@ -133,150 +116,95 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* Services */
-.services h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #F5F5F5;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Why Choose Us */
-.why {
-  text-align: center;
-  padding: 50px 0;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+/* SECTION FIX (REMOVE EMPTY LOOK) */
+.section {
+  padding: 50px 20px;
+  background: #ffffff;
   margin-top: 20px;
 }
 
-.stat {
-  background: #F5F5F5;
-  padding: 15px 20px;
-  border-radius: 8px;
-  margin: 10px;
-  transition: background 0.3s;
-}
-
-.stat:hover {
-  background: #FF6A00;
-  color: #fff;
-}
-
-/* Process */
-.process {
-  background: #0056A6;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.steps {
+/* BUY BIKES GRID */
+.bikes {
   display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 30px auto;
 }
 
-.step {
-  margin: 10px;
+/* BIKE CARD (IMPORTANT) */
+.bike-card {
+  background: #fff;
   padding: 15px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.step:hover {
-  transform: scale(1.05);
-}
-
-/* About */
-.about {
-  padding: 50px 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   text-align: center;
+  transition: all 0.3s;
 }
 
-/* Contact */
-.contact {
-  padding: 50px 20px;
-  text-align: center;
+.bike-card:hover {
+  transform: translateY(-5px);
 }
 
-.contact form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+/* IMAGE */
+.bike-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.contact input, .contact textarea {
-  margin: 10px 0;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* PRICE */
+.bike-card strong {
+  font-size: 18px;
+  color: #111;
 }
 
-.contact button:hover {
-  background: #e65b00;
+/* RESULT TEXT */
+#result {
+  margin-top: 20px;
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-  background: #0056A6;
+  background: #111;
   color: #fff;
   text-align: center;
   padding: 20px;
 }
 
-/* Mobile Responsive Fix */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+
   .hero {
     flex-direction: column;
-    height: auto;
     text-align: center;
     padding: 30px 5%;
   }
 
   .hero-content {
     max-width: 100%;
-    margin-bottom: 20px;
   }
 
   .hero-image {
     text-align: center;
+    margin-top: 20px;
   }
 
   .hero-image img {
     max-width: 100%;
-    height: auto;
   }
 
-  .hero-form {
+  .bikes {
     justify-content: center;
   }
 
-  .hero-services {
-    justify-content: center;
+  .bike-card {
+    width: 90%;
   }
 }
