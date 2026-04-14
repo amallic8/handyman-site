@@ -1,222 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Born2Ride | Buy & Sell Used Bikes in Pune</title>
-<meta name="description" content="Buy and sell used bikes in Pune. Get instant price and best deals.">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
-
-<style>
-body { margin:0; font-family:'Lato',sans-serif; background:#f5f7fa; }
-
-header { background:#111; color:white; text-align:center; padding:15px; }
-
-.hero {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:50px 8%;
-}
-
-.hero-content { max-width:500px; }
-
-.form { display:flex; flex-wrap:wrap; gap:10px; }
-
-.form input,.form select {
-  padding:10px;
-  border-radius:6px;
-  border:1px solid #ccc;
-}
-
-button {
-  padding:10px 15px;
-  background:#ff6b00;
-  color:white;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-button:hover { background:#e55a00; }
-
-.hero img {
-  width:400px;
-  border-radius:10px;
-}
-
-#result { margin-top:15px; font-weight:bold; color:green; }
-
-/* BUY SECTION */
-.section { text-align:center; padding:50px 20px; background:white; }
-
-.bikes {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.card {
-  width:280px;
-  padding:15px;
-  background:white;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-footer {
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.hero { flex-direction:column; text-align:center; }
-.hero img { width:100%; margin-top:20px; }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-🚴 Born2Ride
-</header>
-
-<!-- HERO -->
-<section class="hero">
-
-<div class="hero-content">
-<h1>Buy & Sell Used Bikes in Pune</h1>
-<p>Instant price. Best deals.</p>
-
-<div class="form">
-<select id="brand">
-<option>Honda</option>
-<option>Bajaj</option>
-<option>Yamaha</option>
-<option>Royal Enfield</option>
-</select>
-
-<input id="model" placeholder="Model">
-<input id="km" type="number" placeholder="KM Driven">
-
-<select id="owners">
-<option value="1">1st Owner</option>
-<option value="0.9">2nd Owner</option>
-<option value="0.8">3rd Owner</option>
-</select>
-
-<input id="year" type="number" placeholder="Year">
-
-<button onclick="calc()">Get Price</button>
-</div>
-
-<div id="result"></div>
-
-<br>
-
-<a href="https://wa.me/919876543210?text=I want to sell my bike" target="_blank">
-<button>Sell My Bike</button>
-</a>
-
-</div>
-
-<!-- CHANGE THIS IMAGE TO YOUR OWN -->
-<img src="images/hero-bike.jpg">
-
-</section>
-
-<!-- BUY BIKES -->
-<section class="section">
-
-<h2>Available Bikes</h2>
-
-<div class="bikes">
-
-<!-- CHANGE IMAGE PATH -->
 <div class="card">
-<img src="images/activa.jpg">
-<h3>Honda Activa</h3>
-<p>2020 • 18k km</p>
-<p><strong>₹55,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Honda Activa" target="_blank">
+
+<!-- MAIN IMAGE -->
+<img id="mainBike" src="images/hayabusa1.jpg">
+
+<h3>Suzuki Hayabusa</h3>
+<p>2018 • 12k km</p>
+<p><strong>₹9,50,000</strong></p>
+
+<!-- THUMBNAIL GALLERY -->
+<div class="gallery">
+  <img src="images/hayabusa1.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa2.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa3.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa4.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa5.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa6.jpg" onclick="changeImg(this)">
+  <img src="images/hayabusa7.jpg" onclick="changeImg(this)">
+</div>
+
+<a href="https://wa.me/919876543210?text=I want Suzuki Hayabusa" target="_blank">
 <button>Buy</button>
 </a>
-</div>
-
-<div class="card">
-<img src="images/pulsar.jpg">
-<h3>Pulsar 150</h3>
-<p>2019 • 22k km</p>
-<p><strong>₹60,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Pulsar 150" target="_blank">
-<button>Buy</button>
-</a>
-</div>
-
-<div class="card">
-<img src="images/classic.jpg">
-<h3>Classic 350</h3>
-<p>2021 • 15k km</p>
-<p><strong>₹1,20,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Classic 350" target="_blank">
-<button>Buy</button>
-</a>
-</div>
 
 </div>
-</section>
-
-<footer>
-© 2026 Born2Ride
-<br>
-<span style="font-size:12px;color:gray;">Powered by Handyman Pune</span>
-</footer>
-
-<script>
-function calc(){
-
-let brand = document.getElementById("brand").value;
-let y = document.getElementById("year").value;
-let km = document.getElementById("km").value;
-let o = document.getElementById("owners").value;
-
-if(!y || !km){ alert("Fill details"); return;}
-
-let base = 0;
-
-// REALISTIC BASE PRICES
-if(brand==="Honda") base=70000;
-if(brand==="Bajaj") base=80000;
-if(brand==="Yamaha") base=90000;
-if(brand==="Royal Enfield") base=150000;
-
-let age = 2026 - y;
-
-let dep = 1 - age*0.08;
-if(dep<0.4) dep=0.4;
-
-let kmf = km>30000?0.85:1;
-
-let price = base*dep*kmf*o;
-
-document.getElementById("result").innerText =
-"Estimated Price: ₹"+Math.round(price)+" - ₹"+Math.round(price*1.1);
-}
-</script>
-
-</body>
-</html>
