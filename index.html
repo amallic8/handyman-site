@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bike Resale | Get Instant Price</title>
+  <title>Bike Resale Platform</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 
   <style>
     body {
-      margin: 0;
       font-family: 'Lato', sans-serif;
+      margin: 0;
       background: #f5f7fa;
     }
 
@@ -20,58 +20,54 @@
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
-    header .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-    }
-
-    .btn {
-      background: #ff6b00;
-      color: white;
-      padding: 10px 18px;
-      text-decoration: none;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
+    header h1 {
+      margin: 0;
     }
 
     .hero {
-      display: flex;
-      justify-content: space-between;
-      padding: 60px;
+      text-align: center;
+      padding: 60px 20px;
       background: white;
-      align-items: center;
-      flex-wrap: wrap;
     }
 
-    .hero-content {
-      max-width: 500px;
-    }
-
-    h1 {
+    .hero h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      font-size: 34px;
     }
 
     .calculator {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
+      margin-top: 30px;
+    }
+
+    input, select {
+      padding: 12px;
+      margin: 10px;
+      width: 220px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #e55a00;
     }
 
     #result {
+      margin-top: 20px;
       font-size: 22px;
-      margin-top: 15px;
+      font-weight: bold;
       color: green;
     }
 
@@ -92,13 +88,14 @@
       padding: 20px;
       border-radius: 10px;
       width: 200px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     footer {
       background: #111;
       color: white;
-      text-align: center;
       padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
@@ -106,66 +103,95 @@
 <body>
 
 <header>
-  <div class="logo">BikeResale</div>
-  <a href="#" class="btn">Sell Your Bike</a>
+  <h1>🚴 Bike Resale</h1>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Sell Your Bike Instantly 🚴</h1>
-    <p>Get the best resale price in seconds. No hassle. No waiting.</p>
+  <h2>Sell Your Bike Instantly</h2>
+  <p>India’s smartest bike resale platform</p>
 
-    <div class="calculator">
-      <h2>Check Your Bike Price</h2>
+  <!-- ✅ CALCULATOR START -->
+  <div class="calculator">
 
-      <input type="number" id="year" placeholder="Year of Purchase">
-      <input type="number" id="km" placeholder="KM Driven">
+    <select id="brand">
+      <option>Honda</option>
+      <option>Yamaha</option>
+      <option>Bajaj</option>
+      <option>TVS</option>
+    </select>
 
-      <select id="condition">
-        <option value="1">Good</option>
-        <option value="0.8">Average</option>
-        <option value="0.6">Poor</option>
-      </select>
+    <br>
 
-      <button class="btn" onclick="calc()">Get Price</button>
+    <input type="number" id="year" placeholder="Year of purchase">
+    <input type="number" id="km" placeholder="KM driven">
 
-      <div id="result"></div>
-    </div>
+    <br>
+
+    <select id="condition">
+      <option value="1">Good Condition</option>
+      <option value="0.8">Average Condition</option>
+      <option value="0.6">Poor Condition</option>
+    </select>
+
+    <br>
+
+    <button onclick="calculatePrice()">Get Price</button>
+
+    <div id="result"></div>
+
+    <br>
+
+    <button>Sell My Bike</button>
+
   </div>
+  <!-- ✅ CALCULATOR END -->
+
 </section>
 
 <section class="section">
   <h2>How It Works</h2>
   <div class="steps">
-    <div class="step">📋 Enter Bike Details</div>
-    <div class="step">💰 Get Instant Price</div>
-    <div class="step">🚚 Sell Your Bike</div>
+    <div class="step">1️⃣ Enter Bike Details</div>
+    <div class="step">2️⃣ Get Instant Price</div>
+    <div class="step">3️⃣ Sell Your Bike</div>
   </div>
 </section>
 
 <section class="section">
   <h2>Why Choose Us</h2>
-  <p>Fast pricing • Trusted buyers • Best market value</p>
+  <p>Fast • Easy • Trusted</p>
 </section>
 
 <footer>
-  <p>© 2026 BikeResale. All rights reserved.</p>
+  <p>© 2026 Bike Resale Platform</p>
 </footer>
 
+<!-- ✅ SCRIPT (CALCULATOR LOGIC) -->
 <script>
-function calc() {
+function calculatePrice() {
   let year = document.getElementById("year").value;
   let km = document.getElementById("km").value;
   let condition = document.getElementById("condition").value;
 
-  let age = 2026 - year;
-  let depreciation = 1 - (age * 0.1);
-  if (depreciation < 0.3) depreciation = 0.3;
+  if (!year || !km) {
+    alert("Please fill all details");
+    return;
+  }
 
-  let price = 80000 * depreciation * condition;
+  let age = 2026 - year;
+
+  let depreciation = 1 - (age * 0.08);
+  if (depreciation < 0.4) depreciation = 0.4;
+
+  let kmFactor = km > 20000 ? 0.9 : 1;
+
+  let basePrice = 90000;
+
+  let price = basePrice * depreciation * condition * kmFactor;
 
   document.getElementById("result").innerText =
-    "Estimated Price: ₹" + Math.round(price);
+    "Estimated Price: ₹" + Math.round(price) +
+    " - ₹" + Math.round(price * 1.1);
 }
 </script>
 
