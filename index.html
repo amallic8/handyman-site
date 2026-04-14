@@ -8,43 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Lato', sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: white;
-    }
-
-    .hero h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 34px;
-    }
-
-    .calculator {
-      margin-top: 30px;
-    }
+    body { font-family: 'Lato', sans-serif; margin: 0; background: #f5f7fa; }
+    header { background: #111; color: white; padding: 15px 30px; }
+    .hero { text-align: center; padding: 60px 20px; background: white; }
+    .hero h2 { font-family: 'Montserrat'; font-size: 34px; }
 
     input, select {
       padding: 12px;
       margin: 10px;
-      width: 220px;
+      width: 230px;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
@@ -56,46 +28,14 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 16px;
       font-weight: bold;
-    }
-
-    button:hover {
-      background: #e55a00;
     }
 
     #result {
       margin-top: 20px;
       font-size: 22px;
-      font-weight: bold;
       color: green;
-    }
-
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .steps {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .step {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -108,70 +48,55 @@
 
 <section class="hero">
   <h2>Sell Your Bike Instantly</h2>
-  <p>India’s smartest bike resale platform</p>
+  <p>Get best resale value in seconds</p>
 
-  <!-- ✅ CALCULATOR START -->
-  <div class="calculator">
+  <!-- 🔥 UPDATED CALCULATOR -->
+  <div>
 
+    <!-- Company -->
     <select id="brand">
       <option>Honda</option>
       <option>Yamaha</option>
       <option>Bajaj</option>
       <option>TVS</option>
+      <option>Royal Enfield</option>
+    </select>
+
+    <!-- Model -->
+    <input type="text" id="model" placeholder="Bike Model">
+
+    <br>
+
+    <!-- KM -->
+    <input type="number" id="km" placeholder="KM Driven">
+
+    <!-- Owners -->
+    <select id="owners">
+      <option value="1">1st Owner</option>
+      <option value="0.9">2nd Owner</option>
+      <option value="0.8">3rd Owner</option>
     </select>
 
     <br>
 
-    <input type="number" id="year" placeholder="Year of purchase">
-    <input type="number" id="km" placeholder="KM driven">
+    <!-- Year -->
+    <input type="number" id="year" placeholder="Year of Registration">
 
-    <br>
-
-    <select id="condition">
-      <option value="1">Good Condition</option>
-      <option value="0.8">Average Condition</option>
-      <option value="0.6">Poor Condition</option>
-    </select>
-
-    <br>
+    <br><br>
 
     <button onclick="calculatePrice()">Get Price</button>
 
     <div id="result"></div>
 
-    <br>
-
-    <button>Sell My Bike</button>
-
   </div>
-  <!-- ✅ CALCULATOR END -->
 
 </section>
 
-<section class="section">
-  <h2>How It Works</h2>
-  <div class="steps">
-    <div class="step">1️⃣ Enter Bike Details</div>
-    <div class="step">2️⃣ Get Instant Price</div>
-    <div class="step">3️⃣ Sell Your Bike</div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Why Choose Us</h2>
-  <p>Fast • Easy • Trusted</p>
-</section>
-
-<footer>
-  <p>© 2026 Bike Resale Platform</p>
-</footer>
-
-<!-- ✅ SCRIPT (CALCULATOR LOGIC) -->
 <script>
 function calculatePrice() {
   let year = document.getElementById("year").value;
   let km = document.getElementById("km").value;
-  let condition = document.getElementById("condition").value;
+  let owners = document.getElementById("owners").value;
 
   if (!year || !km) {
     alert("Please fill all details");
@@ -180,14 +105,19 @@ function calculatePrice() {
 
   let age = 2026 - year;
 
+  // depreciation
   let depreciation = 1 - (age * 0.08);
   if (depreciation < 0.4) depreciation = 0.4;
 
-  let kmFactor = km > 20000 ? 0.9 : 1;
+  // km effect
+  let kmFactor = km > 30000 ? 0.85 : 1;
+
+  // owner effect
+  let ownerFactor = owners;
 
   let basePrice = 90000;
 
-  let price = basePrice * depreciation * condition * kmFactor;
+  let price = basePrice * depreciation * kmFactor * ownerFactor;
 
   document.getElementById("result").innerText =
     "Estimated Price: ₹" + Math.round(price) +
