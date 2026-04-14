@@ -16,14 +16,15 @@ header { background:#111; color:white; text-align:center; padding:15px; }
 
 .hero {
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   align-items:center;
   padding:50px 8%;
+  text-align:center;
 }
 
 .hero-content { max-width:500px; }
 
-.form { display:flex; flex-wrap:wrap; gap:10px; }
+.form { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
 
 .form input,.form select {
   padding:10px;
@@ -41,11 +42,6 @@ button {
 }
 
 button:hover { background:#e55a00; }
-
-.hero img {
-  width:400px;
-  border-radius:10px;
-}
 
 #result { margin-top:15px; font-weight:bold; color:green; }
 
@@ -67,11 +63,11 @@ button:hover { background:#e55a00; }
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card img {
-  width:100%;
+.placeholder {
   height:170px;
-  object-fit:cover;
+  background:#ddd;
   border-radius:8px;
+  margin-bottom:10px;
 }
 
 footer {
@@ -83,8 +79,7 @@ footer {
 
 /* MOBILE */
 @media(max-width:768px){
-.hero { flex-direction:column; text-align:center; }
-.hero img { width:100%; margin-top:20px; }
+.hero { flex-direction:column; }
 }
 </style>
 </head>
@@ -134,9 +129,6 @@ footer {
 
 </div>
 
-<!-- CHANGE THIS IMAGE TO YOUR OWN -->
-<img src="images/hero-bike.jpg">
-
 </section>
 
 <!-- BUY BIKES -->
@@ -146,35 +138,28 @@ footer {
 
 <div class="bikes">
 
-<!-- CHANGE IMAGE PATH -->
 <div class="card">
-<img src="images/activa.jpg">
+<div class="placeholder"></div>
 <h3>Honda Activa</h3>
 <p>2020 • 18k km</p>
 <p><strong>₹55,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Honda Activa" target="_blank">
 <button>Buy</button>
-</a>
 </div>
 
 <div class="card">
-<img src="images/pulsar.jpg">
+<div class="placeholder"></div>
 <h3>Pulsar 150</h3>
 <p>2019 • 22k km</p>
 <p><strong>₹60,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Pulsar 150" target="_blank">
 <button>Buy</button>
-</a>
 </div>
 
 <div class="card">
-<img src="images/classic.jpg">
+<div class="placeholder"></div>
 <h3>Classic 350</h3>
 <p>2021 • 15k km</p>
 <p><strong>₹1,20,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want Classic 350" target="_blank">
 <button>Buy</button>
-</a>
 </div>
 
 </div>
@@ -198,14 +183,12 @@ if(!y || !km){ alert("Fill details"); return;}
 
 let base = 0;
 
-// REALISTIC BASE PRICES
 if(brand==="Honda") base=70000;
 if(brand==="Bajaj") base=80000;
 if(brand==="Yamaha") base=90000;
 if(brand==="Royal Enfield") base=150000;
 
 let age = 2026 - y;
-
 let dep = 1 - age*0.08;
 if(dep<0.4) dep=0.4;
 
