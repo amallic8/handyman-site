@@ -10,154 +10,81 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  background: #f5f7fa;
-  color: #333;
-}
+body { margin:0; font-family:'Lato',sans-serif; background:#f5f7fa; }
 
-/* HEADER */
-header {
-  background: #111;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-family: 'Montserrat';
-}
+header { background:#111; color:white; text-align:center; padding:15px; }
 
-/* HERO */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 8%;
-  background: linear-gradient(135deg,#ffffff,#eef2f7);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:50px 8%;
 }
 
-.hero-content {
-  max-width: 550px;
-}
+.hero-content { max-width:500px; }
 
-.hero h1 {
-  font-size: 2.6rem;
-}
+.form { display:flex; flex-wrap:wrap; gap:10px; }
 
-.hero p {
-  margin: 10px 0 20px;
-}
-
-/* FORM */
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.form input, .form select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  min-width: 170px;
+.form input,.form select {
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
 }
 
 button {
-  padding: 12px 18px;
-  background: #ff6b00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
+  padding:10px 15px;
+  background:#ff6b00;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-button:hover {
-  background: #e55a00;
-}
+button:hover { background:#e55a00; }
 
-/* RESULT */
-#result {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  color: green;
-}
-
-/* HERO IMAGE */
 .hero img {
-  width: 450px;
-  border-radius: 12px;
+  width:400px;
+  border-radius:10px;
 }
 
-/* SECTION */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-  background: white;
-}
+#result { margin-top:15px; font-weight:bold; color:green; }
 
-/* FILTERS */
-.filters {
-  margin-bottom: 20px;
-}
+/* BUY SECTION */
+.section { text-align:center; padding:50px 20px; background:white; }
 
-.filters select {
-  padding: 10px;
-  margin: 5px;
-}
-
-/* BIKES */
 .bikes {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
 }
 
 .card {
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  width:280px;
+  padding:15px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .card img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 10px;
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:8px;
 }
 
-.tag {
-  color: green;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* FOOTER */
 footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero img {
-    width: 100%;
-    margin-top: 20px;
-  }
+.hero { flex-direction:column; text-align:center; }
+.hero img { width:100%; margin-top:20px; }
 }
 </style>
 </head>
@@ -173,14 +100,13 @@ footer {
 
 <div class="hero-content">
 <h1>Buy & Sell Used Bikes in Pune</h1>
-<p>Instant price. Best deals. No hassle.</p>
+<p>Instant price. Best deals.</p>
 
 <div class="form">
 <select id="brand">
 <option>Honda</option>
 <option>Bajaj</option>
 <option>Yamaha</option>
-<option>TVS</option>
 <option>Royal Enfield</option>
 </select>
 
@@ -208,48 +134,33 @@ footer {
 
 </div>
 
-<img src="https://images.unsplash.com/photo-1518655048521-f130df041f66">
+<!-- CHANGE THIS IMAGE TO YOUR OWN -->
+<img src="images/hero-bike.jpg">
 
 </section>
 
-<!-- BUY SECTION -->
+<!-- BUY BIKES -->
 <section class="section">
 
 <h2>Available Bikes</h2>
 
-<div class="filters">
-<select>
-<option>All Brands</option>
-<option>Honda</option>
-<option>Bajaj</option>
-</select>
-
-<select>
-<option>Price Range</option>
-<option>Below 50k</option>
-<option>50k - 1L</option>
-<option>Above 1L</option>
-</select>
-</div>
-
 <div class="bikes">
 
+<!-- CHANGE IMAGE PATH -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1580310614729-ccd69652491d">
+<img src="images/activa.jpg">
 <h3>Honda Activa</h3>
 <p>2020 • 18k km</p>
-<p class="tag">✔ Verified</p>
 <p><strong>₹55,000</strong></p>
-<a href="https://wa.me/919876543210?text=I want to buy Honda Activa" target="_blank">
+<a href="https://wa.me/919876543210?text=I want Honda Activa" target="_blank">
 <button>Buy</button>
 </a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558980664-10ea90d84f68">
+<img src="images/pulsar.jpg">
 <h3>Pulsar 150</h3>
 <p>2019 • 22k km</p>
-<p class="tag">✔ Verified</p>
 <p><strong>₹60,000</strong></p>
 <a href="https://wa.me/919876543210?text=I want Pulsar 150" target="_blank">
 <button>Buy</button>
@@ -257,10 +168,9 @@ footer {
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65">
+<img src="images/classic.jpg">
 <h3>Classic 350</h3>
 <p>2021 • 15k km</p>
-<p class="tag">✔ Verified</p>
 <p><strong>₹1,20,000</strong></p>
 <a href="https://wa.me/919876543210?text=I want Classic 350" target="_blank">
 <button>Buy</button>
@@ -271,26 +181,37 @@ footer {
 </section>
 
 <footer>
-© 2026 Born2Ride  
+© 2026 Born2Ride
 <br>
 <span style="font-size:12px;color:gray;">Powered by Handyman Pune</span>
 </footer>
 
 <script>
 function calc(){
+
+let brand = document.getElementById("brand").value;
 let y = document.getElementById("year").value;
 let km = document.getElementById("km").value;
 let o = document.getElementById("owners").value;
 
 if(!y || !km){ alert("Fill details"); return;}
 
+let base = 0;
+
+// REALISTIC BASE PRICES
+if(brand==="Honda") base=70000;
+if(brand==="Bajaj") base=80000;
+if(brand==="Yamaha") base=90000;
+if(brand==="Royal Enfield") base=150000;
+
 let age = 2026 - y;
+
 let dep = 1 - age*0.08;
 if(dep<0.4) dep=0.4;
 
 let kmf = km>30000?0.85:1;
 
-let price = 90000*dep*kmf*o;
+let price = base*dep*kmf*o;
 
 document.getElementById("result").innerText =
 "Estimated Price: ₹"+Math.round(price)+" - ₹"+Math.round(price*1.1);
