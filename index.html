@@ -3,144 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bike Resale Platform</title>
 
+  <!-- SEO -->
+  <title>Buy & Sell Used Bikes in Pune | Instant Bike Price</title>
+  <meta name="description" content="Buy and sell used bikes in Pune. Get instant bike price and best resale value.">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Lato', sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: white;
-    }
-
-    .hero h2 {
-      font-family: 'Montserrat';
-      font-size: 34px;
-    }
-
-    input, select {
-      padding: 12px;
-      margin: 10px;
-      width: 230px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 12px 20px;
-      background: #ff6b00;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background: #e55a00;
-    }
-
-    #result {
-      margin-top: 20px;
-      font-size: 22px;
-      color: green;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .bikes {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .bike-card {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      width: 260px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .bike-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <h1>🚴 Bike Resale Platform</h1>
+  <div class="container">
+    <h1>🚴 Born2Ride</h1>
+  </div>
 </header>
 
 <!-- HERO + CALCULATOR -->
 <section class="hero">
-  <h2>India’s Smartest Bike Resale Platform 🚴</h2>
-  <p>Get best resale value in seconds</p>
+  <div class="hero-content">
+    <h1>Buy & Sell Used Bikes in Pune 🚴</h1>
+    <p>Get instant resale price and best deals</p>
 
-  <div>
+    <div class="hero-form">
 
-    <select id="brand">
-      <option>Honda</option>
-      <option>Yamaha</option>
-      <option>Bajaj</option>
-      <option>TVS</option>
-      <option>Royal Enfield</option>
-    </select>
+      <select id="brand">
+        <option>Honda</option>
+        <option>Yamaha</option>
+        <option>Bajaj</option>
+        <option>TVS</option>
+        <option>Royal Enfield</option>
+      </select>
 
-    <input type="text" id="model" placeholder="Bike Model">
+      <input type="text" id="model" placeholder="Bike Model">
 
-    <br>
+      <input type="number" id="km" placeholder="KM Driven">
 
-    <input type="number" id="km" placeholder="KM Driven">
+      <select id="owners">
+        <option value="1">1st Owner</option>
+        <option value="0.9">2nd Owner</option>
+        <option value="0.8">3rd Owner</option>
+      </select>
 
-    <select id="owners">
-      <option value="1">1st Owner</option>
-      <option value="0.9">2nd Owner</option>
-      <option value="0.8">3rd Owner</option>
-    </select>
+      <input type="number" id="year" placeholder="Year of Registration">
 
-    <br>
+      <button onclick="calculatePrice()">Get Price</button>
 
-    <input type="number" id="year" placeholder="Year of Registration">
-
-    <br><br>
-
-    <button onclick="calculatePrice()">Get Price</button>
+    </div>
 
     <div id="result"></div>
 
-    <br><br>
+    <br>
 
     <!-- SELL BUTTON -->
     <a href="https://wa.me/919876543210?text=I want to sell my bike" target="_blank">
@@ -152,52 +68,54 @@
 
 <!-- BUY BIKES -->
 <section class="section">
-  <h2>Buy Bikes From Us</h2>
-  <p>Quality checked bikes available</p>
+  <div class="container">
+    <h2>Buy Bikes From Us</h2>
+    <p>Quality checked bikes available</p>
 
-  <div class="bikes">
+    <div class="bikes">
 
-    <div class="bike-card">
-      <img src="https://images.unsplash.com/photo-1580310614729-ccd69652491d">
-      <h3>Honda Activa</h3>
-      <p>Year: 2020</p>
-      <p>KM: 18,000</p>
-      <p><strong>₹55,000</strong></p>
-      <a href="https://wa.me/919876543210?text=I want to buy Honda Activa" target="_blank">
-        <button>Contact to Buy</button>
-      </a>
+      <div class="bike-card">
+        <img src="https://images.unsplash.com/photo-1580310614729-ccd69652491d">
+        <h3>Honda Activa</h3>
+        <p>Year: 2020</p>
+        <p>KM: 18,000</p>
+        <p><strong>₹55,000</strong></p>
+        <a href="https://wa.me/919876543210?text=I want to buy Honda Activa" target="_blank">
+          <button>Contact to Buy</button>
+        </a>
+      </div>
+
+      <div class="bike-card">
+        <img src="https://images.unsplash.com/photo-1558980664-10ea90d84f68">
+        <h3>Bajaj Pulsar 150</h3>
+        <p>Year: 2019</p>
+        <p>KM: 22,000</p>
+        <p><strong>₹60,000</strong></p>
+        <a href="https://wa.me/919876543210?text=I want to buy Pulsar 150" target="_blank">
+          <button>Contact to Buy</button>
+        </a>
+      </div>
+
+      <div class="bike-card">
+        <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65">
+        <h3>Royal Enfield Classic 350</h3>
+        <p>Year: 2021</p>
+        <p>KM: 15,000</p>
+        <p><strong>₹1,20,000</strong></p>
+        <a href="https://wa.me/919876543210?text=I want to buy Classic 350" target="_blank">
+          <button>Contact to Buy</button>
+        </a>
+      </div>
+
     </div>
-
-    <div class="bike-card">
-      <img src="https://images.unsplash.com/photo-1558980664-10ea90d84f68">
-      <h3>Bajaj Pulsar 150</h3>
-      <p>Year: 2019</p>
-      <p>KM: 22,000</p>
-      <p><strong>₹60,000</strong></p>
-      <a href="https://wa.me/919876543210?text=I want to buy Pulsar 150" target="_blank">
-        <button>Contact to Buy</button>
-      </a>
-    </div>
-
-    <div class="bike-card">
-      <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65">
-      <h3>Royal Enfield Classic 350</h3>
-      <p>Year: 2021</p>
-      <p>KM: 15,000</p>
-      <p><strong>₹1,20,000</strong></p>
-      <a href="https://wa.me/919876543210?text=I want to buy Classic 350" target="_blank">
-        <button>Contact to Buy</button>
-      </a>
-    </div>
-
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Bike Resale Platform</p>
+  <p>© 2026 Born2Ride</p>
 </footer>
 
-<!-- CALCULATOR SCRIPT -->
+<!-- SCRIPT -->
 <script>
 function calculatePrice() {
   let year = document.getElementById("year").value;
@@ -219,7 +137,7 @@ function calculatePrice() {
   let price = 90000 * depreciation * kmFactor * owners;
 
   document.getElementById("result").innerText =
-    "Estimated Price: ₹" + Math.round(price) +
+    "Estimated Market Value: ₹" + Math.round(price) +
     " - ₹" + Math.round(price * 1.1);
 }
 </script>
